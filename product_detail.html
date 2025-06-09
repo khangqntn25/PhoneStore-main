@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/Images/images (1).jfif" />
+    <link rel="stylesheet" href="./assets/Phone_store.css" />
+    <title>Chi tiết sản phẩm</title>
+    <style>
+      /* Styles specific to product_detail.html for layout */
+      .product-detail-page {
+        padding: 80px 60px; /* Adjust padding to clear navbar */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        min-height: 80vh; /* Ensure content pushes footer down */
+      }
+      .product-detail-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        max-width: 800px;
+        background-color: #fff;
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .product-detail-content img {
+        max-width: 300px;
+        height: auto;
+        object-fit: contain;
+        margin-bottom: 20px;
+      }
+      .product-detail-content h1 {
+        font-size: 2.5em;
+        color: #333;
+        margin-bottom: 10px;
+      }
+      .product-detail-content p {
+        font-size: 1.5em;
+        color: #4b57ab;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .product-detail-description {
+        font-size: 1.1em;
+        color: #555;
+        line-height: 1.6;
+        text-align: justify;
+        margin-bottom: 30px;
+        max-width: 600px; /* Limit width for readability */
+      }
+      .product-specs {
+        margin-top: 20px;
+        width: 100%;
+        max-width: 600px;
+        text-align: left;
+        border-top: 1px solid #eee;
+        padding-top: 20px;
+      }
+      .product-specs h2 {
+        font-size: 1.8em;
+        color: #333;
+        margin-bottom: 15px;
+        text-align: center;
+      }
+      .product-specs ul {
+        list-style: none;
+        padding: 0;
+      }
+      .product-specs ul li {
+        margin-bottom: 10px;
+        padding-bottom: 5px;
+        border-bottom: 1px dashed #eee;
+        font-size: 1.05em;
+        color: #666;
+        display: flex;
+        justify-content: space-between;
+      }
+      .product-specs ul li span:first-child {
+        font-weight: 600;
+        color: #333;
+        flex-basis: 30%;
+      }
+      .product-specs ul li span:last-child {
+        flex-basis: 65%;
+      }
+
+      .add-to-cart-details-button {
+        background-color: #ff7043;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .add-to-cart-details-button:hover {
+        background-color: #ff5722;
+      }
+
+      .back-to-products {
+        background-color: #607d8b;
+        color: white;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1.1em;
+        transition: background-color 0.3s ease;
+        text-decoration: none; /* For the link */
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 20px;
+      }
+      .back-to-products:hover {
+        background-color: #455a64;
+      }
+
+      /* Responsive adjustments for product_detail.html */
+      @media screen and (max-width: 768px) {
+        .product-detail-page {
+          padding: 60px 20px;
+        }
+        .product-detail-content {
+          padding: 20px;
+        }
+        .product-detail-content img {
+          max-width: 200px;
+        }
+        .product-detail-content h1 {
+          font-size: 2em;
+        }
+        .product-detail-content p {
+          font-size: 1.2em;
+        }
+        .product-detail-description {
+          font-size: 1em;
+        }
+        .product-specs ul li {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 5px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">KVT</a>
+      </div>
+      <div class="list">
+        <ul class="items">
+          <li><a href="index.html#home">Trang chủ</a></li>
+          <li><a href="index.html#products" class="active">Sản phẩm</a></li>
+          <li><a href="index.html#about_us">Đôi nét về chúng tôi</a></li>
+          <li><a href="index.html#contact_us">Liên hệ</a></li>
+
+          <div class="search">
+            <li><i class="bx bx-search-alt-2"></i></li>
+            <input type="search" placeholder="Tìm kiếm..." />
+          </div>
+          <div class="reseaux">
+            <li>
+              <a href="https://www.instagram.com/vku.udn.vn/"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/vku.udn.vn"
+                ><i class="bx bxl-facebook-circle"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@vku.udn.vn?lang=vi-VN"
+                ><i class="bx bxl-tiktok"></i
+              ></a>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="menu">
+        <i class="bx bx-menu"></i>
+      </div>
+    </div>
+
+    <div class="product-detail-page">
+      <div class="product-detail-content" id="product-details-content">
+        <p>Đang tải chi tiết sản phẩm...</p>
+      </div>
+      <button class="add-to-cart-details-button" id="add-to-cart-details-button">
+        <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+      </button>
+      <a href="index.html#products" class="back-to-products">
+        <i class="bx bx-arrow-back"></i> Quay lại sản phẩm
+      </a>
+    </div>
+
+    <div class="footer">
+      <div class="foot">
+        <div class="logo_footer">
+          <a href="index.html" class="logo">KVT</a>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/vku.udn.vn/"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/vku.udn.vn"
+                ><i class="bx bxl-facebook-circle"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@vku.udn.vn?lang=vi-VN"
+                ><i class="bx bxl-tiktok"></i
+              ></a>
+            </li>
+          </ul>
+          <div class="email">
+            <i class="bx bxl-gmail"></i>
+            <p>vku@gmail.com</p>
+          </div>
+          <div class="adress">
+            <i class="bx bxs-location-plus"></i>
+            <p>470 Trần Đại Nghĩa, Ngũ Hành Sơn, Đà Nẵng</p>
+          </div>
+        </div>
+        <div class="liens_footer">
+          <h3>Liên kết</h3>
+          <ul>
+            <li><a href="index.html#home">Trang chủ</a></li>
+            <li><a href="index.html#products">Sản phẩm</a></li>
+            <li><a href="index.html#about_us">Đôi nét về chúng tôi</a></li>
+            <li><a href="index.html#contact_us">Liên hệ với chúng tôi</a></li>
+          </ul>
+        </div>
+        <div class="category_footer">
+          <h3>Danh mục</h3>
+          <ul>
+            <li><a href="index.html#products" class="footer_samsung">Samsung</a></li>
+            <li><a href="index.html#products" class="footer_iphone">iPhone</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="designed_by">Thiết kế bởi KVT</div>
+    </div>
+
+    <script>
+        // --- START: Dữ liệu sản phẩm (được lặp lại ở đây để product_detail.html tự hoạt động) ---
+        // Trong một dự án lớn hơn, bạn sẽ load cái này từ một file JS riêng hoặc từ API.
+        const allProductDetails = {
+            "iPhone 11": {
+                name: "iPhone 11",
+                price: "9.190.000 ₫",
+                image: "./assets/Images/produits/iphone11-removebg-preview.png",
+                description: "iPhone 11 là một chiếc điện thoại tuyệt vời với camera kép mạnh mẽ, chip A13 Bionic nhanh chóng và thời lượng pin cả ngày. Đây là lựa chọn lý tưởng cho những ai muốn trải nghiệm hệ sinh thái Apple với mức giá phải chăng.",
+                specs: {
+                    screen: "Liquid Retina HD display 6.1-inch",
+                    processor: "A13 Bionic chip",
+                    camera: "Dual 12MP Ultra Wide and Wide cameras",
+                    battery: "Up to 17 hours video playback",
+                    storage: "64GB, 128GB, 256GB"
+                }
+            },
+            "Galaxy S20": {
+                name: "Galaxy S20",
+                price: "4.499.000 ₫",
+                image: "./assets/Images/produits/galaxys20-removebg-preview.png",
+                description: "Samsung Galaxy S20 mang đến màn hình Dynamic AMOLED sống động, hệ thống camera linh hoạt và hiệu năng mạnh mẽ. Một thiết bị cân bằng tốt giữa hiệu năng và giá cả.",
+                specs: {
+                    screen: "6.2-inch Dynamic AMOLED 2X",
+                    processor: "Exynos 990 (Global) / Snapdragon 865 (US)",
+                    camera: "12MP Wide, 64MP Telephoto, 12MP Ultra Wide",
+                    battery: "4000 mAh",
+                    storage: "128GB"
+                }
+            },
+            "Galaxy S21": {
+                name: "Galaxy S21",
+                price: "4.799.000 ₫",
+                image: "./assets/Images/produits/galaxys21-removebg-preview.png",
+                description: "Galaxy S21 là sự kết hợp hoàn hảo giữa thiết kế thời thượng và hiệu năng mạnh mẽ, mang đến trải nghiệm người dùng đẳng cấp. Với vi xử lý Exynos 2100 hoặc Snapdragon 888, mọi tác vụ đều trở nên mượt mà.",
+                specs: {
+                    screen: "6.2-inch Dynamic AMOLED 2X",
+                    processor: "Exynos 2100 (Global) / Snapdragon 888 (US)",
+                    camera: "12MP Wide, 64MP Telephoto, 12MP Ultra Wide",
+                    battery: "4000 mAh",
+                    storage: "128GB, 256GB"
+                }
+            },
+            "iPhone 12 Pro Max": {
+                name: "iPhone 12 Pro Max",
+                price: "13.490.000 ₫",
+                image: "./assets/Images/produits/iphone12_pro_max-removebg-preview.png",
+                description: "iPhone 12 Pro Max sở hữu màn hình Super Retina XDR lớn, hệ thống camera Pro tiên tiến và chip A14 Bionic. Đây là lựa chọn hàng đầu cho những ai yêu thích chụp ảnh và quay phim chuyên nghiệp.",
+                specs: {
+                    screen: "Super Retina XDR 6.7-inch",
+                    processor: "A14 Bionic chip",
+                    camera: "12MP Ultra Wide, Wide, and Telephoto",
+                    battery: "Up to 20 hours video playback",
+                    storage: "128GB, 256GB, 512GB"
+                }
+            },
+            "iPhone 13": {
+                name: "iPhone 13",
+                price: "11.590.000 ₫",
+                image: "./assets/Images/produits/iphone13-removebg-preview.png",
+                description: "iPhone 13 với chip A15 Bionic mạnh mẽ, hệ thống camera kép tiên tiến và thời lượng pin được cải thiện đáng kể. Sự kết hợp giữa hiệu năng và tính năng giúp iPhone 13 trở thành một thiết bị đáng giá.",
+                specs: {
+                    screen: "Super Retina XDR 6.1-inch",
+                    processor: "A15 Bionic chip",
+                    camera: "Dual 12MP Wide and Ultra Wide cameras",
+                    battery: "Up to 19 hours video playback",
+                    storage: "128GB, 256GB, 512GB"
+                }
+            },
+            "iPhone 14": {
+                name: "iPhone 14",
+                price: "12.750.000 ₫",
+                image: "./assets/Images/produits/iphone14-removebg-preview.png",
+                description: "iPhone 14 mang đến khả năng phát hiện va chạm, camera cải tiến và thời lượng pin vượt trội. Một bản nâng cấp đáng giá với nhiều tính năng an toàn mới.",
+                specs: {
+                    screen: "Super Retina XDR 6.1-inch",
+                    processor: "A15 Bionic chip (5-core GPU)",
+                    camera: "Dual 12MP Main and Ultra Wide cameras",
+                    battery: "Up to 20 hours video playback",
+                    storage: "128GB, 256GB, 512GB"
+                }
+            },
+            "iPhone 15 Pro Max": {
+                name: "iPhone 15 Pro Max",
+                price: "25.490.000 ₫",
+                image: "./assets/Images/produits/iphone15_pro_max-removebg-preview.png",
+                description: "iPhone 15 Pro Max với khung titan, chip A17 Pro và hệ thống camera mạnh mẽ nhất từ trước đến nay. Đây là chiếc iPhone hàng đầu với hiệu năng và khả năng nhiếp ảnh vượt trội.",
+                specs: {
+                    screen: "Super Retina XDR with ProMotion 6.7-inch",
+                    processor: "A17 Pro chip",
+                    camera: "48MP Main, 12MP Ultra Wide, 12MP Telephoto",
+                    battery: "Up to 29 hours video playback",
+                    storage: "256GB, 512GB, 1TB"
+                }
+            },
+            "Galaxy S22": {
+                name: "Galaxy S22",
+                price: "5.999.000 ₫",
+                image: "./assets/Images/produits/galaxys22-removebg-preview.png",
+                description: "Galaxy S22 với thiết kế tinh tế, camera chuyên nghiệp và hiệu năng mạnh mẽ trong một kích thước nhỏ gọn. Một chiếc điện thoại cao cấp tiện lợi cho mọi nhu cầu.",
+                specs: {
+                    screen: "6.1-inch Dynamic AMOLED 2X",
+                    processor: "Snapdragon 8 Gen 1 / Exynos 2200",
+                    camera: "50MP Wide, 10MP Telephoto, 12MP Ultra Wide",
+                    battery: "3700 mAh",
+                    storage: "128GB, 256GB"
+                }
+            },
+            "Galaxy S23": {
+                name: "Galaxy S23",
+                price: "6.159.000 ₫",
+                image: "./assets/Images/produits/galaxys23-removebg-preview.png",
+                description: "Galaxy S23 nổi bật với camera cải tiến, hiệu năng mạnh mẽ và thời lượng pin tối ưu cho trải nghiệm mượt mà. Đem lại sự cân bằng hoàn hảo giữa hiệu suất và thiết kế.",
+                specs: {
+                    screen: "6.1-inch Dynamic AMOLED 2X",
+                    processor: "Snapdragon 8 Gen 2 for Galaxy",
+                    camera: "50MP Wide, 10MP Telephoto, 12MP Ultra Wide",
+                    battery: "3900 mAh",
+                    storage: "128GB, 256GB"
+                }
+            },
+            "Galaxy S23 Ultra": {
+                name: "Galaxy S23 Ultra",
+                price: "9.899.000 ₫",
+                image: "./assets/Images/produits/galaxys23ultra-removebg-preview.png",
+                description: "Galaxy S23 Ultra là đỉnh cao của công nghệ với camera 200MP, S Pen tích hợp và hiệu năng vượt trội. Chiếc điện thoại này là sự lựa chọn hàng đầu cho những người dùng đòi hỏi cao về mọi mặt.",
+                specs: {
+                    screen: "6.8-inch Dynamic AMOLED 2X",
+                    processor: "Snapdragon 8 Gen 2 for Galaxy",
+                    camera: "200MP Wide, 10MP Periscope Telephoto, 10MP Telephoto, 12MP Ultra Wide",
+                    battery: "5000 mAh",
+                    storage: "256GB, 512GB, 1TB"
+                }
+            },
+            "Galaxy S21 Ultra": {
+                name: "Galaxy S21 Ultra",
+                price: "10.679.000 ₫",
+                image: "./assets/Images/produits/galaxys21ultra-removebg-preview.png",
+                description: "Galaxy S21 Ultra mang đến trải nghiệm di động cao cấp với màn hình Dynamic AMOLED tuyệt đẹp, camera 108MP và hỗ trợ S Pen. Sản phẩm này cung cấp mọi thứ bạn cần từ một chiếc flagship.",
+                specs: {
+                    screen: "6.8-inch Dynamic AMOLED 2X",
+                    processor: "Exynos 2100 (Global) / Snapdragon 888 (US)",
+                    camera: "108MP Wide, 10MP Periscope Telephoto, 10MP Telephoto, 12MP Ultra Wide",
+                    battery: "5000 mAh",
+                    storage: "128GB, 256GB, 512GB"
+                }
+            }
+        };
+        // --- END: Dữ liệu sản phẩm ---
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const productName = decodeURIComponent(urlParams.get("productName")); // Giải mã tên sản phẩm từ URL
+
+            const productDetailsContent = document.getElementById("product-details-content");
+            const addToCartDetailsButton = document.getElementById("add-to-cart-details-button");
+
+            const product = allProductDetails[productName];
+
+            if (product) {
+                let specsHtml = '';
+                if (product.specs) {
+                    specsHtml += `<div class="product-specs"><h2>Thông số kỹ thuật</h2><ul>`;
+                    for (const [key, value] of Object.entries(product.specs)) {
+                        specsHtml += `<li><span>${key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1')}:</span> <span>${value}</span></li>`;
+                    }
+                    specsHtml += `</ul></div>`;
+                }
+
+                productDetailsContent.innerHTML = `
+                    <img src="${product.image}" alt="${product.name}">
+                    <h1>${product.name}</h1>
+                    <p>${product.price}</p>
+                    <div class="product-detail-description">
+                        <p>${product.description}</p>
+                    </div>
+                    ${specsHtml}
+                `;
+
+                // Set data attributes for the "Add to Cart" button
+                addToCartDetailsButton.dataset.name = product.name;
+                addToCartDetailsButton.dataset.price = product.price;
+
+            } else {
+                productDetailsContent.innerHTML = "<p>Không tìm thấy thông tin sản phẩm.</p>";
+                addToCartDetailsButton.style.display = 'none'; // Hide add to cart button if product not found
+            }
+        });
+
+        // Hàm cập nhật giỏ hàng - cần được định nghĩa hoặc import
+        // Để đơn giản, tôi sẽ định nghĩa lại một phần nhỏ của logic giỏ hàng ở đây
+        // Trong một ứng dụng thực tế, bạn sẽ có một file JS chung cho giỏ hàng.
+
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || []; // Load cart from localStorage
+
+        function updateCartCount() {
+            let totalCount = 0;
+            cartItems.forEach(item => {
+                totalCount += item.quantity;
+            });
+            // Giả sử có một biểu tượng giỏ hàng ở navbar hoặc footer của trang chi tiết
+            const floatingCartCount = document.getElementById('cart-count'); // If floating cart exists on this page
+            if(floatingCartCount) {
+                floatingCartCount.textContent = totalCount;
+            }
+            localStorage.setItem('cartItems', JSON.stringify(cartItems)); // Save cart to localStorage
+        }
+
+        const addToCartDetailsButton = document.getElementById("add-to-cart-details-button");
+        if (addToCartDetailsButton) {
+            addToCartDetailsButton.addEventListener("click", (event) => {
+                const productName = event.target.dataset.name;
+                const productPrice = event.target.dataset.price;
+
+                const existingItem = cartItems.find((item) => item.name === productName);
+
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cartItems.push({
+                        name: productName,
+                        price: productPrice,
+                        quantity: 1,
+                    });
+                }
+                updateCartCount();
+                alert(`Đã thêm "${productName}" vào giỏ hàng!`);
+                console.log("Sản phẩm trong giỏ hàng (từ chi tiết):", cartItems);
+            });
+        }
+        updateCartCount(); // Initial load of cart count
+    </script>
+ <script src="./assets/Phone_store.js"></script>
+</body>
+</html>

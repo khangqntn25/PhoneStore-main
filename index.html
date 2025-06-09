@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/Images/images (1).jfif" />
+    <link rel="stylesheet" href="./assets/Phone_store.css" />
+    <title>Phone Store - Samsung Apple</title>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="logo">
+        <a href="index.html">KVT</a>
+      </div>
+      <div class="list">
+        <ul class="items">
+          <li><a href="#home" class="active">Trang chủ</a></li>
+          <li><a href="#products" class="products_link">Sản phẩm</a></li>
+          <li><a href="#about_us">Đôi nét về chúng tôi</a></li>
+          <li><a href="#contact_us">Liên hệ</a></li>
+
+          <div class="search">
+            <li><i class="bx bx-search-alt-2"></i></li>
+            <input type="search" placeholder="Tìm kiếm..." />
+          </div>
+          <div class="reseaux">
+            <li>
+              <a href="https://www.instagram.com/vku.udn.vn/"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/vku.udn.vn"
+                ><i class="bx bxl-facebook-circle"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@vku.udn.vn?lang=vi-VN"
+                ><i class="bx bxl-tiktok"></i
+              ></a>
+            </li>
+          </div>
+        </ul>
+      </div>
+      <div class="menu">
+        <i class="bx bx-menu"></i>
+      </div>
+    </div>
+
+    <div class="home" id="home">
+      <div class="hero">
+        <h5>Cửa hàng điện thoại KGV</h5>
+        ...
+
+        <h1>Khám phá những cải tiến mới nhất từ ​​Apple và Samsung</h1>
+        <p>
+          Khám phá công nghệ mới nhất với điện thoại thông minh, máy tính bảng
+          và phụ kiện mới nhất của Apple và Samsung. Khám phá các tính năng cải
+          tiến và hiệu suất hàng đầu được thiết kế để nâng cao trải nghiệm kỹ
+          thuật số của bạn.
+        </p>
+        <h5>Danh mục</h5>
+        <div class="categories_images">
+          <div class="samsung_category_image">
+            <a href="#products"
+              ><img
+                src="./assets/Images/samsung-galaxy-s23-ultra-5g-removebg-preview.png"
+                alt=""
+            /></a>
+            <p>Samsung</p>
+          </div>
+          <div class="iphone_category_image">
+            <a href="#products"
+              ><img src="./assets/Images/iphone_category.png" alt=""
+            /></a>
+            <p>iPhone</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="products" id="products">
+      <div class="h2">
+        <h2>SẢN PHẨM</h2>
+      </div>
+      <div class="filter_section">
+        <select name="category" id="category">
+          <option value="All Categories">Tất cả danh mục</option>
+          <option value="iPhone">iPhone</option>
+          <option value="Samsung">Samsung</option>
+        </select>
+        <div class="search_filter">
+          <i class="bx bx-search-alt-2"></i>
+          <input type="search" placeholder="Tìm kiếm theo tên..." />
+        </div>
+      </div>
+
+      <div class="product">
+        <div class="box iphone">
+          <div>
+            <img
+              src="./assets/Images/produits/iphone11-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>iPhone 11</h3>
+            <h3>9.190.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="iPhone 11"
+              data-price="9.190.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="iPhone 11">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box samsung">
+          <div>
+            <img
+              src="./assets/Images/produits/galaxys20-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>Galaxy S20</h3>
+            <h3>4.499.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="Galaxy S20"
+              data-price="4.499.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="Galaxy S20">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box samsung">
+          <div>
+            <img
+              src="./assets/Images/produits/galaxys21-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>Galaxy S21</h3>
+            <h3>4.799.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="Galaxy S21"
+              data-price="4.799.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="Galaxy S21">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box iphone">
+          <div>
+            <img
+              src="./assets/Images/produits/iphone12_pro_max-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>iPhone 12 Pro Max</h3>
+            <h3>13.490.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="iPhone 12 Pro Max"
+              data-price="13.490.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="iPhone 12 Pro Max">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box iphone">
+          <div>
+            <img
+              src="./assets/Images/produits/iphone13-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>iPhone 13</h3>
+            <h3>11.590.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="iPhone 13"
+              data-price="11.590.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="iPhone 13">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box iphone">
+          <div>
+            <img
+              src="./assets/Images/produits/iphone14-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>iPhone 14</h3>
+            <h3>12.750.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="iPhone 14"
+              data-price="12.750.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="iPhone 14">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box iphone">
+          <div>
+            <img
+              src="./assets/Images/produits/iphone15_pro_max-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>iPhone 15 Pro Max</h3>
+            <h3>25.490.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="iPhone 15 Pro Max"
+              data-price="25.490.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="iPhone 15 Pro Max">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+
+        <div class="box samsung">
+          <div>
+            <img
+              src="./assets/Images/produits/galaxys22-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>Galaxy S22</h3>
+            <h3>5.999.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="Galaxy S22"
+              data-price="5.999.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="Galaxy S22">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box samsung">
+          <div>
+            <img
+              src="./assets/Images/produits/galaxys23-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>Galaxy S23</h3>
+            <h3>6.159.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="Galaxy S23"
+              data-price="6.159.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="Galaxy S23">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box samsung">
+          <div>
+            <img
+              src="./assets/Images/produits/galaxys23ultra-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>Galaxy S23 Ultra</h3>
+            <h3>9.899.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="Galaxy S23 Ultra"
+              data-price="9.899.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="Galaxy S23 Ultra">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+        <div class="box samsung">
+          <div>
+            <img
+              src="./assets/Images/produits/galaxys21ultra-removebg-preview.png"
+              alt=""
+            />
+          </div>
+          <div class="details">
+            <h3>Galaxy S21 Ultra</h3>
+            <h3>10.679.000 ₫</h3>
+          </div>
+          <div class="two_btn">
+            <button
+              class="add_to_cart"
+              data-name="Galaxy S21 Ultra"
+              data-price="10.679.000"
+            >
+              <i class="bx bx-cart"></i> Thêm vào giỏ hàng
+            </button>
+            <button class="view_details" data-name="Galaxy S21 Ultra">
+              Xem chi tiết
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="about_us" id="about_us">
+      <h2>Đôi nét về chúng tôi</h2>
+      <div>
+        <p>
+          Chúng tôi là một cửa hàng trực tuyến hàng đầu, chuyên cung cấp những
+          sản phẩm mới nhất và sáng tạo nhất từ Apple và Samsung. Mục tiêu của
+          chúng tôi là giúp khách hàng luôn dẫn đầu xu hướng công nghệ bằng cách
+          mang đến những lựa chọn được tuyển chọn kỹ lưỡng gồm điện thoại thông
+          minh, máy tính bảng và phụ kiện tiên tiến. <br />
+
+          Chúng tôi tự hào không chỉ cung cấp sản phẩm chất lượng cao mà còn
+          mang đến trải nghiệm dịch vụ khách hàng vượt trội. Cam kết về sự hoàn
+          hảo của chúng tôi đảm bảo rằng mọi tương tác – từ việc duyệt qua danh
+          mục sản phẩm đến khi hoàn tất mua hàng – đều diễn ra mượt mà, an toàn
+          và được cá nhân hóa để đáp ứng nhu cầu của từng khách hàng. <br />
+
+          Dù bạn là người đam mê công nghệ hay chỉ đơn giản đang tìm kiếm thiết
+          bị phù hợp nhất với lối sống của mình, chúng tôi luôn sẵn sàng đồng
+          hành cùng bạn trong từng bước của hành trình.
+        </p>
+        <img
+          src="./assets/Images/about_us-removebg-preview.png"
+          alt=""
+          srcset=""
+        />
+      </div>
+      <div class="div2">
+        <img src="./assets/Images/about_uss.png" alt="" srcset="" />
+        <p>
+          Kể từ khi thành lập vào năm 2017, sứ mệnh của chúng tôi là mang đến
+          cho khách hàng những sản phẩm chất lượng cao từ các thương hiệu hàng
+          đầu, với trọng tâm là cung cấp giá trị vượt trội. Chúng tôi cam kết
+          đảm bảo mỗi khách hàng đều có trải nghiệm mua sắm liền mạch – từ việc
+          khám phá danh mục đa dạng các sản phẩm tiên tiến của Apple và Samsung
+          đến khi nhận được sự hỗ trợ cá nhân hóa. <br />
+
+          Bên cạnh việc cung cấp mức giá cạnh tranh, chúng tôi tự hào với dịch
+          vụ hậu mãi xuất sắc, luôn sẵn sàng hỗ trợ để đảm bảo khách hàng hoàn
+          toàn hài lòng với sản phẩm đã mua. Sự tận tâm với chất lượng và sự hài
+          lòng của khách hàng chính là nền tảng trong hoạt động kinh doanh của
+          chúng tôi từ những ngày đầu, và chúng tôi vẫn không ngừng nỗ lực để
+          đạt được sự hoàn hảo trong mọi việc mình làm.
+        </p>
+      </div>
+    </div>
+
+    <div class="contact_us" id="contact_us">
+      <h2>Liên hệ với chúng tôi</h2>
+      <div class="contact">
+        <div class="left">
+          <div class="left">
+            <img
+              src="./assets/Images/contact-illustration.png"
+              alt="Contact Illustration"
+              class="contact-image"
+            />
+          </div>
+        </div>
+        <div class="right">
+          <form action="">
+            <input type="text" placeholder="Tên" required />
+            <input type="text" placeholder="Họ" required />
+            <input type="email" placeholder="E-mail" required />
+            <label for="">Lời nhắn của bạn :</label>
+            <input type="text" class="message" required />
+            <input type="submit" value="Gửi" class="send" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <div class="foot">
+        <div class="logo_footer">
+          <a href="Phone_store.html" class="logo">KVT</a>
+          <ul>
+            <li>
+              <a href="https://www.instagram.com/vku.udn.vn/"
+                ><i class="bx bxl-instagram"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/vku.udn.vn"
+                ><i class="bx bxl-facebook-circle"></i
+              ></a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@vku.udn.vn?lang=vi-VN"
+                ><i class="bx bxl-tiktok"></i
+              ></a>
+            </li>
+          </ul>
+          <div class="email">
+            <i class="bx bxl-gmail"></i>
+            <p>vku@gmail.com</p>
+          </div>
+          <div class="adress">
+            <i class="bx bxs-location-plus"></i>
+            <p>470 Trần Đại Nghĩa, Ngũ Hành Sơn, Đà Nẵng</p>
+          </div>
+        </div>
+        <div class="liens_footer">
+          <h3>Liên kết</h3>
+          <ul>
+            <li><a href="#home" class="active">Trang chủ</a></li>
+            <li><a href="#products" class="products_link">Sản phẩm</a></li>
+            <li><a href="#about_us">Đôi nét về chúng tôi</a></li>
+            <li><a href="#contact_us">Liên hệ với chúng tôi</a></li>
+          </ul>
+        </div>
+        <div class="category_footer">
+          <h3>Danh mục</h3>
+          <ul>
+            <li><a href="#products" class="footer_samsung">Samsung</a></li>
+            <li><a href="#products" class="footer_iphone">iPhone</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="designed_by">Thiết kế bởi KVT</div>
+    </div>
+
+    <div class="floating-cart">
+      <i class="bx bx-cart"></i>
+      <span id="cart-count">0</span>
+    </div>
+    <div id="cart-modal" class="cart-modal">
+      <div class="cart-modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Giỏ hàng của bạn</h2>
+        <div id="cart-items-container">
+          <p>Giỏ hàng đang trống.</p>
+        </div>
+        <div class="cart-summary">
+          <p>Tổng cộng: <span id="cart-total">0 ₫</span></p>
+        </div>
+        <button class="checkout-button">Thanh toán</button>
+      </div>
+    </div>
+
+    <script src="./assets/Phone_store.js"></script>
+  </body>
+</html>
