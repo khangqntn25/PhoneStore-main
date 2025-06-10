@@ -20,7 +20,10 @@ let slider = setInterval(() => {
   if (n == images_slide.length) {
     n = 0;
   }
-  services_image.src = images_slide[n];
+  // Check if services_image exists before setting src
+  if (services_image) {
+    services_image.src = images_slide[n];
+  }
 }, 5000);
 
 /* -------------------- category section -------------------------- */
@@ -36,20 +39,22 @@ function samsung() {
   filter_category.value = "Samsung";
   samsung_category.forEach((e) => {
     e.classList.remove("hide");
-    iphone_category.forEach((e) => {
-      e.classList.add("hide");
-    });
   });
+  iphone_category.forEach((e) => {
+    e.classList.add("hide");
+  });
+  scrollToProducts();
 }
 
 function iphone() {
   filter_category.value = "iPhone";
   samsung_category.forEach((e) => {
     e.classList.add("hide");
-    iphone_category.forEach((e) => {
-      e.classList.remove("hide");
-    });
   });
+  iphone_category.forEach((e) => {
+    e.classList.remove("hide");
+  });
+  scrollToProducts();
 }
 
 samsung_category_image.addEventListener("click", samsung);
@@ -65,26 +70,33 @@ filter_category.addEventListener("change", function () {
   if (filter_category.value == "iPhone") {
     samsung_category.forEach((e) => {
       e.classList.add("hide");
-      iphone_category.forEach((e) => {
-        e.classList.remove("hide");
-      });
+    });
+    iphone_category.forEach((e) => {
+      e.classList.remove("hide");
     });
   } else if (filter_category.value == "Samsung") {
     samsung_category.forEach((e) => {
       e.classList.remove("hide");
-      iphone_category.forEach((e) => {
-        e.classList.add("hide");
-      });
+    });
+    iphone_category.forEach((e) => {
+      e.classList.add("hide");
     });
   } else {
     samsung_category.forEach((e) => {
       e.classList.remove("hide");
-      iphone_category.forEach((e) => {
-        e.classList.remove("hide");
-      });
+    });
+    iphone_category.forEach((e) => {
+      e.classList.remove("hide");
     });
   }
 });
+
+function scrollToProducts() {
+  const productsSection = document.getElementById("products");
+  if (productsSection) {
+    productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+}
 
 /*----------------- responsive ----------------------*/
 
@@ -477,3 +489,77 @@ viewDetailsButtons.forEach((button) => {
 
 // Initial cart count update when page loads
 updateCartCount();
+
+// Navbar Search Functionality
+const navbarSearchInput = document.getElementById("navbar-search-input");
+const searchSuggestionsDiv = document.getElementById("search-suggestions");
+const productBoxes = document.querySelectorAll(".products .box");
+
+navbarSearchInput.addEventListener("input", function () {
+  const searchTerm = this.value.toLowerCase().trim();
+  searchSuggestionsDiv.innerHTML = ""; // Clear previous suggestions
+
+  if (searchTerm.length === 0) {
+    searchSuggestionsDiv.style.display = "none";
+    return;
+  }
+
+  const matchingProducts = Object.values(allProductDetails).filter((product) =>
+    product.name.toLowerCase().includes(searchTerm)
+  );
+
+  if (matchingProducts.length > 0) {
+    matchingProducts.forEach((product) => {
+      const suggestionItem = document.createElement("div");
+      suggestionItem.textContent = product.name;
+      suggestionItem.addEventListener("click", () => {
+        navbarSearchInput.value = product.name;
+        searchSuggestionsDiv.style.display = "none";
+        scrollToProduct(product.name);
+      });
+      searchSuggestionsDiv.appendChild(suggestionItem);
+    });
+    searchSuggestionsDiv.style.display = "block";
+  } else {
+    searchSuggestionsDiv.style.display = "none";
+  }
+});
+
+document.addEventListener("click", function (event) {
+  if (
+    !navbarSearchInput.contains(event.target) &&
+    !searchSuggestionsDiv.contains(event.target)
+  ) {
+    searchSuggestionsDiv.style.display = "none";
+  }
+});
+
+function scrollToProduct(productName) {
+  productBoxes.forEach((box) => box.classList.remove("hide"));
+
+  const targetProductElement = document.querySelector(
+    `.products .box[data-product-name="${productName}"]`
+  );
+
+  if (targetProductElement) {
+    productBoxes.forEach((box) => {
+      if (box !== targetProductElement) {
+        box.classList.add("hide");
+      }
+    });
+
+    const productsSection = document.getElementById("products");
+    if (productsSection) {
+      productsSection.scrollIntoView({ behavior: "smooth", block: "start" });
+
+      setTimeout(() => {
+        targetProductElement.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
+        });
+      }, 300);
+    }
+  } else {
+    scrollToProducts();
+  }
+}

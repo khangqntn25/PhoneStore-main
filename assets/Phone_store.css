@@ -85,6 +85,7 @@ sup {
 }
 
 .search {
+  position: relative;
   display: flex;
   align-items: center;
   background-color: #fff;
@@ -104,6 +105,35 @@ sup {
 
 .search input:focus {
   outline: none;
+}
+
+.search-suggestions {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 100;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: none;
+}
+
+.search-suggestions div {
+  padding: 8px 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+.search-suggestions div:hover {
+  background-color: #f0f0f0;
+}
+
+.search-suggestions div:last-child {
+  border-bottom: none;
 }
 
 .bxs-moon,
@@ -128,7 +158,7 @@ sup {
   color: #2e2e2e;
 }
 
-/*------------------ hero ----------------*/
+/*menu*/
 
 .hero {
   height: 500px;
@@ -228,7 +258,7 @@ sup {
   transform: translateY(-5px);
 }
 
-/* ------------------ products section --------------------*/
+/*products section*/
 
 .products {
   padding: 0px 60px;
@@ -340,7 +370,7 @@ sup {
   outline: none;
 }
 
-/*------------------- Contact -----------------------*/
+/*Contact*/
 
 .contact_us {
   background-color: var(--bgcolor);
@@ -406,8 +436,6 @@ sup {
   object-fit: contain;
 }
 
-/*-------------- about us ---------------*/
-
 .about_us {
   padding: 0 60px;
   background-color: var(--bgcolor);
@@ -434,8 +462,6 @@ sup {
 .about_us div img {
   width: 500px;
 }
-
-/* ----------------- footer -----------------*/
 
 .footer .designed_by {
   text-align: center;
@@ -506,10 +532,6 @@ i {
 .category_footer a:hover {
   text-decoration: underline;
 }
-
-/* --------------- responsive -------------------*/
-
-/* ---------------- navbar ------------------------*/
 
 @media only screen and (max-width: 1270px) {
   .items {
@@ -636,12 +658,11 @@ i {
   }
 }
 
-/* Floating Cart Button */
 .floating-cart {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  background-color: #4b57ab; /* Match your navbar color */
+  background-color: #4b57ab;
   color: #fff;
   border-radius: 50%;
   width: 60px;
@@ -652,19 +673,19 @@ i {
   font-size: 28px;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000;
   transition: background-color 0.3s ease;
 }
 
 .floating-cart:hover {
-  background-color: #373f7c; /* Slightly darker on hover */
+  background-color: #373f7c;
 }
 
 .floating-cart #cart-count {
   position: absolute;
   top: -8px;
   right: -8px;
-  background-color: #ff5722; /* Orange for count */
+  background-color: #ff5722;
   color: white;
   border-radius: 50%;
   padding: 5px 8px;
@@ -677,30 +698,30 @@ i {
   display: none !important;
 }
 .cart-modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 2000; /* Sit on top (higher than floating cart) */
+  display: none;
+  position: fixed;
+  z-index: 2000;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
-  backdrop-filter: blur(5px); /* Add a subtle blur effect */
-  -webkit-backdrop-filter: blur(5px); /* For Safari */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
 }
 
 .cart-modal-content {
   background-color: #fefefe;
-  margin: 10% auto; /* 10% from the top and centered */
+  margin: 10% auto;
   padding: 30px;
   border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-  max-width: 500px; /* Max width for larger screens */
+  width: 80%;
+  max-width: 500px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   position: relative;
-  animation: fadeInModal 0.3s ease-out; /* Simple fade-in animation */
+  animation: fadeInModal 0.3s ease-out;
 }
 
 @keyframes fadeInModal {
@@ -721,7 +742,7 @@ i {
 }
 
 #cart-items-container {
-  max-height: 300px; /* Limit height and make it scrollable */
+  max-height: 300px;
   overflow-y: auto;
   border: 1px solid #eee;
   padding: 10px;
@@ -818,7 +839,7 @@ i {
   display: block;
   width: 100%;
   padding: 15px;
-  background-color: #4caf50; /* Green color */
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -836,7 +857,7 @@ i {
 @media screen and (max-width: 600px) {
   .cart-modal-content {
     width: 90%;
-    margin: 5% auto; /* Adjust margin for smaller screens */
+    margin: 5% auto;
     padding: 20px;
   }
 }
